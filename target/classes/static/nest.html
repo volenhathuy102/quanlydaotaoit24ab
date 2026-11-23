@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký học phần - NestJS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/adminlte/css/adminlte.css" />
+    <style>
+        .app-main { margin-left: 250px; min-width: 0; }
+        .nest-page { position: relative; z-index: 1; }
+        .nest-page { max-width: 1180px; margin: 24px auto; }
+        .nest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+        .nest-card { background: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 18px; box-shadow: 0 2px 8px rgb(0 0 0 / 5%); }
+        .nest-card h2 { font-size: 18px; margin: 0 0 14px; }
+        .nest-row { display: grid; gap: 8px; margin-bottom: 10px; }
+        .nest-row input { min-height: 38px; border: 1px solid #ced4da; border-radius: 5px; padding: 7px 10px; }
+        .nest-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .nest-list { display: grid; gap: 8px; max-height: 330px; overflow: auto; }
+        .nest-item { display:flex; justify-content:space-between; gap:12px; border:1px solid #e9ecef; border-radius:6px; padding:10px; }
+        .nest-status { min-height: 22px; color: #842029; }
+        .nest-status.success { color: #146c43; }
+        .hidden { display: none; }
+        @media (max-width: 992px) {
+            .app-main { margin-left: 0; }
+            .nest-page { margin: 16px 12px; }
+        }
+    </style>
+</head>
+<body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+<div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body">
+        <div class="container-fluid"><span class="fw-semibold">Quản lý đào tạo</span></div>
+    </nav>
+    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <div class="sidebar-brand"><a href="index.html" class="brand-link"><span class="brand-text fw-light">School Manager</span></a></div>
+        <div class="sidebar-wrapper">
+            <nav class="mt-2">
+                <ul class="nav sidebar-menu flex-column">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-people-fill"></i><p>Sinh viên</p></a></li>
+                    <li class="nav-item"><a href="academic.html" class="nav-link"><i class="nav-icon bi bi-calendar3"></i><p>Học kỳ - Lớp học phần</p></a></li>
+                    <li class="nav-item"><a href="nest.html" class="nav-link active"><i class="nav-icon bi bi-cloud-check"></i><p>NestJS - Đăng ký &amp; Báo cáo</p></a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <main class="app-main">
+        <div class="app-content nest-page">
+            <h1 class="h3 mb-3">Đăng ký học phần và chức năng NestJS</h1>
+            <div class="nest-grid">
+                <section class="nest-card">
+                    <h2>Đăng nhập</h2>
+                    <form id="loginForm">
+                        <div class="nest-row"><label>Tên đăng nhập</label><input name="username" autocomplete="username" required /></div>
+                        <div class="nest-row"><label>Mật khẩu</label><input name="password" type="password" autocomplete="current-password" minlength="12" required /></div>
+                        <button class="btn btn-primary" type="submit">Đăng nhập</button>
+                    </form>
+                    <p id="authStatus" class="nest-status"></p>
+                    <div class="nest-actions">
+                        <button id="logoutButton" class="btn btn-outline-secondary" type="button" hidden>Đăng xuất</button>
+                    </div>
+                </section>
+
+                <section class="nest-card">
+                    <h2>Đăng ký tài khoản sinh viên</h2>
+                    <form id="registerForm">
+                        <div class="nest-row"><label>Tên đăng nhập</label><input name="username" minlength="3" maxlength="100" required /></div>
+                        <div class="nest-row"><label>Họ và tên</label><input name="fullName" maxlength="255" required /></div>
+                        <div class="nest-row"><label>Email hồ sơ sinh viên</label><input name="email" type="email" maxlength="255" required /></div>
+                        <div class="nest-row"><label>Mật khẩu</label><input name="password" type="password" minlength="12" maxlength="72" required /></div>
+                        <button class="btn btn-success" type="submit">Đăng ký</button>
+                    </form>
+                    <p id="registerStatus" class="nest-status"></p>
+                </section>
+
+                <section class="nest-card">
+                    <h2>Lớp học phần mở đăng ký</h2>
+                    <button id="reloadOpen" class="btn btn-outline-primary btn-sm" type="button">Tải danh sách</button>
+                    <div id="openSections" class="nest-list mt-3"></div>
+                </section>
+
+                <section class="nest-card">
+                    <h2>Đăng ký của tôi</h2>
+                    <button id="reloadMine" class="btn btn-outline-primary btn-sm" type="button">Tải đăng ký</button>
+                    <div id="myRegistrations" class="nest-list mt-3"></div>
+                </section>
+
+                <section class="nest-card">
+                    <h2>Thông báo</h2>
+                    <button id="reloadNotifications" class="btn btn-outline-primary btn-sm" type="button">Tải thông báo</button>
+                    <div id="notifications" class="nest-list mt-3"></div>
+                </section>
+
+                <section class="nest-card">
+                    <h2>Thống kê dành cho quản trị</h2>
+                    <button id="reloadReports" class="btn btn-outline-primary btn-sm" type="button">Tải báo cáo</button>
+                    <div id="reports" class="nest-list mt-3"></div>
+                </section>
+                <section id="adminRegistrationsCard" class="nest-card" hidden>
+                    <h2>Danh sách đăng ký - Quản trị</h2>
+                    <button id="reloadAdminRegistrations" class="btn btn-outline-primary btn-sm" type="button">Tải danh sách</button>
+                    <div id="adminRegistrations" class="nest-list mt-3"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="/assets/js/nest.js?v=1" defer></script>
+</body>
+</html>

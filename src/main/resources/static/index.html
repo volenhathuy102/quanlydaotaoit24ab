@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đào tạo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/css/portal.css?v=1" />
+</head>
+<body>
+    <div id="loginScreen" class="login-screen">
+        <div class="login-visual">
+            <div class="login-brand"><i class="bi bi-mortarboard-fill"></i><span>School Manager</span></div>
+            <div class="login-visual-content">
+                <h1>Quản lý đào tạo</h1>
+                <p>Cổng quản trị và đăng ký học phần tập trung.</p>
+            </div>
+        </div>
+        <main class="login-panel">
+            <form id="loginForm" class="login-card">
+                <div class="login-heading">
+                    <span class="login-icon"><i class="bi bi-person-circle"></i></span>
+                    <h2>Đăng nhập hệ thống</h2>
+                    <p>Sử dụng tài khoản Admin, giảng viên hoặc sinh viên.</p>
+                </div>
+                <label for="username">Tên đăng nhập</label>
+                <div class="input-shell"><i class="bi bi-person"></i><input id="username" name="username" autocomplete="username" placeholder="Nhập tên đăng nhập" required /></div>
+                <label for="password">Mật khẩu</label>
+                <div class="input-shell"><i class="bi bi-lock"></i><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required /></div>
+                <p id="loginStatus" class="login-status" role="alert"></p>
+                <button id="loginButton" type="submit" class="login-button">Đăng nhập <i class="bi bi-arrow-right"></i></button>
+                <button id="forgotPasswordButton" type="button" class="forgot-password-button">Quên mật khẩu?</button>
+            </form>
+        </main>
+    </div>
+
+    <div id="appShell" class="app-shell" hidden>
+        <aside class="portal-sidebar">
+            <div class="portal-brand"><i class="bi bi-mortarboard-fill"></i><div><strong>School Manager</strong><small id="accountRole">Tài khoản</small></div></div>
+            <nav id="portalMenu" class="portal-menu"></nav>
+            <button id="portalLogout" class="portal-logout" type="button"><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></button>
+        </aside>
+        <div class="portal-workspace">
+            <header class="portal-header">
+                <div>
+                    <small id="portalBreadcrumb">Bảng điều khiển</small>
+                    <h1 id="portalTitle">Bảng điều khiển</h1>
+                </div>
+                <div class="account-chip"><span id="accountInitial">A</span><div><strong id="accountName">Tài khoản</strong><small id="accountMeta">Vai trò</small></div></div>
+            </header>
+            <main id="portalContent" class="portal-content"></main>
+        </div>
+    </div>
+
+    <script src="/assets/js/portal.js?v=2" defer></script>
+</body>
+</html>

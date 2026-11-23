@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý học kỳ - lớp học phần</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/adminlte/css/adminlte.css" />
+    <link rel="stylesheet" href="/assets/css/student.css" />
+    <link rel="stylesheet" href="/assets/css/academic.css" />
+</head>
+<body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+<div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" data-lte-toggle="sidebar" href="#" role="button" aria-label="Mở menu"><i class="bi bi-list"></i></a></li>
+                <li class="nav-item d-none d-md-block"><span class="nav-link fw-semibold">Quản lý đào tạo</span></li>
+            </ul>
+        </div>
+    </nav>
+    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <div class="sidebar-brand">
+            <a href="academic.html" class="brand-link">
+                <img src="/adminlte/assets/img/AdminLTELogo.png" alt="" class="brand-image opacity-75 shadow" />
+                <span class="brand-text fw-light">School Manager</span>
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <nav class="mt-2">
+                <ul class="nav sidebar-menu flex-column" role="navigation">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-people-fill"></i><p>Sinh viên</p></a></li>
+                    <li class="nav-item"><a href="academic.html" class="nav-link active"><i class="nav-icon bi bi-calendar3"></i><p>Học kỳ - Lớp học phần</p></a></li>
+                    <li class="nav-item"><a href="nest.html" class="nav-link"><i class="nav-icon bi bi-cloud-check"></i><p>NestJS - Đăng ký &amp; Báo cáo</p></a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <main class="app-main">
+        <div class="app-content-header">
+            <div class="container-fluid">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div>
+                        <h3 class="mb-1">Quản lý học kỳ - lớp học phần</h3>
+                        <div class="text-secondary">Quản lý niên khóa, năm học, học kỳ, lớp học phần và phân công.</div>
+                    </div>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Đào tạo</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="app-content">
+            <div class="container-fluid">
+                <div class="academic-summary row g-3 mb-3">
+                    <div class="col-12 col-md-4"><div class="summary-card"><span class="summary-icon"><i class="bi bi-calendar-range"></i></span><div><small>Niên khóa / Năm học</small><strong>Quản lý thời gian đào tạo</strong></div></div></div>
+                    <div class="col-12 col-md-4"><div class="summary-card"><span class="summary-icon"><i class="bi bi-journal-bookmark"></i></span><div><small>Học kỳ / Lớp học phần</small><strong>Tổ chức lịch học và lớp</strong></div></div></div>
+                    <div class="col-12 col-md-4"><div class="summary-card"><span class="summary-icon"><i class="bi bi-person-workspace"></i></span><div><small>Sinh viên / Giảng viên</small><strong>Đăng ký và phân công</strong></div></div></div>
+                </div>
+                <section class="card shadow-sm border-0">
+                    <div class="card-header academic-toolbar">
+                        <div>
+                            <h3 class="card-title mb-1" id="resourceTitle">Niên khóa đào tạo</h3>
+                            <span class="text-secondary small" id="resourceHint">Danh sách niên khóa</span>
+                        </div>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <label class="visually-hidden" for="resourceSearch">Tìm kiếm</label>
+                            <div class="input-group input-group-sm academic-search">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="search" id="resourceSearch" class="form-control" placeholder="Tìm trong danh sách..." />
+                            </div>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="refreshButton"><i class="bi bi-arrow-clockwise me-1"></i>Làm mới</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="createButton"><i class="bi bi-plus-lg me-1"></i>Thêm mới</button>
+                        </div>
+                    </div>
+                    <div class="resource-tabs" id="resourceTabs" role="tablist" aria-label="Nhóm quản lý"></div>
+                    <div class="card-body p-0">
+                        <div id="resourceError" class="alert alert-danger m-3 d-none" role="alert"></div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light"><tr id="tableHead"></tr></thead>
+                                <tbody id="resourceTableBody">
+                                    <tr><td class="text-center text-secondary py-5">Đang tải dữ liệu...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center text-secondary small">
+                        <span id="resultCount">0 bản ghi</span>
+                        <span>Xóa là xóa mềm; dữ liệu vẫn được lưu để tra cứu.</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="app-footer"><strong>Quản lý đào tạo</strong><div class="float-end d-none d-sm-inline">School Manager</div></footer>
+</div>
+
+<dialog id="recordDialog" class="record-dialog">
+    <form id="recordForm">
+        <div class="dialog-header">
+            <div><span class="text-primary small fw-semibold">QUẢN LÝ ĐÀO TẠO</span><h2 class="h5 mb-0 mt-1" id="dialogTitle">Thêm bản ghi</h2></div>
+            <button type="button" class="btn-close" id="closeDialog" aria-label="Đóng"></button>
+        </div>
+        <div id="formError" class="alert alert-danger d-none mb-3" role="alert"></div>
+        <div class="dialog-fields" id="dialogFields"></div>
+        <div class="dialog-actions">
+            <button type="button" class="btn btn-outline-secondary" id="cancelDialog">Hủy</button>
+            <button type="submit" class="btn btn-primary" id="saveButton"><i class="bi bi-check2 me-1"></i>Lưu dữ liệu</button>
+        </div>
+    </form>
+</dialog>
+<script src="/adminlte/js/adminlte.js"></script>
+<script type="module" src="/assets/js/academic.js?v=2"></script>
+</body>
+</html>

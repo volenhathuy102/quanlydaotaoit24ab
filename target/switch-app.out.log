@@ -1,0 +1,489 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-19T17:14:33.657+07:00  INFO 22496 --- [quanlydaotao] [           main] c.e.q.QuanlydaotaoApplication            : Starting QuanlydaotaoApplication v0.0.1-SNAPSHOT using Java 25.0.4.1 with PID 22496 (D:\JavaWeb1\quanlydaotaoit24ab\quanlydaotaoit24ab\target\quanlydaotao-0.0.1-SNAPSHOT.jar started by ASUS in D:\JavaWeb1\quanlydaotaoit24ab\quanlydaotaoit24ab)
+2026-11-19T17:14:33.662+07:00  INFO 22496 --- [quanlydaotao] [           main] c.e.q.QuanlydaotaoApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-19T17:14:34.413+07:00  INFO 22496 --- [quanlydaotao] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-19T17:14:34.477+07:00  INFO 22496 --- [quanlydaotao] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 16 JPA repository interfaces.
+2026-11-19T17:14:35.895+07:00  INFO 22496 --- [quanlydaotao] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-19T17:14:35.975+07:00  INFO 22496 --- [quanlydaotao] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-19T17:14:35.977+07:00  INFO 22496 --- [quanlydaotao] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-11-19T17:14:36.055+07:00  INFO 22496 --- [quanlydaotao] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2343 ms
+2026-11-19T17:14:37.045+07:00  INFO 22496 --- [quanlydaotao] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-19T17:14:37.177+07:00  INFO 22496 --- [quanlydaotao] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-19T17:14:38.247+07:00  INFO 22496 --- [quanlydaotao] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-19T17:14:38.308+07:00  INFO 22496 --- [quanlydaotao] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-19T17:14:38.973+07:00  INFO 22496 --- [quanlydaotao] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: af6c7e7d-532d-494c-a495-f695373e9cd5
+2026-11-19T17:14:38.976+07:00  INFO 22496 --- [quanlydaotao] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-19T17:14:39.108+07:00  WARN 22496 --- [quanlydaotao] [           main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-19T17:14:39.155+07:00  INFO 22496 --- [quanlydaotao] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:sqlserver://localhost:1433;concatNullYieldsNull=ON;quotedIdentifier=ON;connectRetryInterval=10;connectRetryCount=1;maxResultBuffer=-1;sendTemporalDataTypesAsStringForBulkCopy=true;delayLoadingLobs=true;useFmtOnly=false;vectorTypeSupport=v1;cacheBulkCopyMetadata=false;bulkCopyForBatchInsertAllowEncryptedValueModifications=false;bulkCopyForBatchInsertTableLock=false;bulkCopyForBatchInsertKeepNulls=false;bulkCopyForBatchInsertKeepIdentity=false;bulkCopyForBatchInsertFireTriggers=false;bulkCopyForBatchInsertCheckConstraints=false;bulkCopyForBatchInsertBatchSize=0;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;calcBigDecimalPrecision=false;useDefaultJaasConfig=false;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;datetimeParameterType=datetime2;sendTimeAsDatetime=true;replication=false;trustStoreType=JKS;trustServerCertificate=true;TransparentNetworkIPResolution=true;iPAddressPreference=IPv4First;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;useDefaultGSSCredential=false;prepareMethod=prepexec;encrypt=true;disableStatementPooling=true;databaseName=quanlydaotao;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;]
+	Database driver: Microsoft JDBC Driver 13.4 for SQL Server
+	Database dialect: SQLServerDialect
+	Database version: 16.0
+	Default catalog/schema: quanlydaotao/dbo
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 128
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-19T17:14:40.143+07:00  INFO 22496 --- [quanlydaotao] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-19T17:14:40.151+07:00  INFO 22496 --- [quanlydaotao] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-19T17:14:40.233+07:00  INFO 22496 --- [quanlydaotao] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-19T17:14:41.421+07:00  INFO 22496 --- [quanlydaotao] [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page: class path resource [static/index.html]
+2026-11-19T17:14:41.747+07:00  INFO 22496 --- [quanlydaotao] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-19T17:14:41.759+07:00  INFO 22496 --- [quanlydaotao] [           main] c.e.q.QuanlydaotaoApplication            : Started QuanlydaotaoApplication in 8.501 seconds (process running for 8.947)
+2026-11-19T17:14:51.303+07:00  INFO 22496 --- [quanlydaotao] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-19T17:14:51.305+07:00  INFO 22496 --- [quanlydaotao] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-19T17:14:51.307+07:00  INFO 22496 --- [quanlydaotao] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+Hibernate: 
+    select
+        cs1_0.id,
+        cs1_0.building_id,
+        cs1_0.class_type,
+        cs1_0.code,
+        cs1_0.course_id,
+        cs1_0.created_at,
+        cs1_0.created_by,
+        cs1_0.deleted_at,
+        cs1_0.deleted_by,
+        cs1_0.is_active,
+        cs1_0.max_students,
+        cs1_0.min_students,
+        cs1_0.name,
+        cs1_0.note,
+        cs1_0.registration_end,
+        cs1_0.registration_start,
+        cs1_0.room_id,
+        cs1_0.semester_id,
+        cs1_0.status,
+        cs1_0.updated_at,
+        cs1_0.updated_by 
+    from
+        course_sections cs1_0 
+    where
+        cs1_0.deleted_at is null
+Hibernate: 
+    select
+        ay1_0.id,
+        ay1_0.code,
+        ay1_0.created_at,
+        ay1_0.created_by,
+        ay1_0.deleted_at,
+        ay1_0.deleted_by,
+        ay1_0.description,
+        ay1_0.end_date,
+        ay1_0.is_active,
+        ay1_0.name,
+        ay1_0.start_date,
+        ay1_0.updated_at,
+        ay1_0.updated_by,
+        ay1_0.[year] 
+    from
+        academic_years ay1_0 
+    where
+        ay1_0.deleted_at is null
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.academic_year_year,
+        s1_0.address,
+        s1_0.admission_year,
+        s1_0.card_place,
+        s1_0.code,
+        s1_0.created_at,
+        s1_0.created_by,
+        s1_0.current_address,
+        s1_0.date_of_birth,
+        s1_0.date_of_issue,
+        s1_0.deleted_at,
+        s1_0.deleted_by,
+        s1_0.department_id,
+        s1_0.email,
+        s1_0.full_name,
+        s1_0.gender,
+        s1_0.is_active,
+        s1_0.major_id,
+        s1_0.personal_identification_number,
+        s1_0.phone,
+        s1_0.status_id,
+        s1_0.student_classess_id,
+        s1_0.training_program_id,
+        s1_0.updated_at,
+        s1_0.updated_by,
+        s1_0.user_id 
+    from
+        students s1_0
+Hibernate: 
+    select
+        ay1_0.id,
+        ay1_0.code,
+        ay1_0.created_at,
+        ay1_0.created_by,
+        ay1_0.deleted_at,
+        ay1_0.deleted_by,
+        ay1_0.description,
+        ay1_0.end_date,
+        ay1_0.is_active,
+        ay1_0.name,
+        ay1_0.start_date,
+        ay1_0.updated_at,
+        ay1_0.updated_by,
+        ay1_0.[year] 
+    from
+        academic_years ay1_0 
+    where
+        ay1_0.deleted_at is null
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.code,
+        m1_0.created_at,
+        m1_0.created_by,
+        m1_0.deleted_at,
+        m1_0.deleted_by,
+        m1_0.department_id,
+        m1_0.description,
+        m1_0.effective_date,
+        m1_0.expiry_date,
+        m1_0.is_active,
+        m1_0.name,
+        m1_0.updated_at,
+        m1_0.updated_by 
+    from
+        majors m1_0 
+    where
+        m1_0.deleted_at is null
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.code,
+        d1_0.created_at,
+        d1_0.created_by,
+        d1_0.deleted_at,
+        d1_0.deleted_by,
+        d1_0.description,
+        d1_0.established_year,
+        d1_0.is_active,
+        d1_0.name,
+        d1_0.updated_at,
+        d1_0.updated_by 
+    from
+        departments d1_0 
+    where
+        d1_0.deleted_at is null
+Hibernate: 
+    select
+        tp1_0.id,
+        tp1_0.admission_year,
+        tp1_0.code,
+        tp1_0.created_at,
+        tp1_0.created_by,
+        tp1_0.deleted_at,
+        tp1_0.deleted_by,
+        tp1_0.department_id,
+        tp1_0.description,
+        tp1_0.duration_years,
+        tp1_0.effective_date,
+        tp1_0.expiry_date,
+        tp1_0.is_active,
+        tp1_0.major_id,
+        tp1_0.name,
+        tp1_0.status,
+        tp1_0.total_credits,
+        tp1_0.updated_at,
+        tp1_0.updated_by 
+    from
+        training_programs tp1_0 
+    where
+        tp1_0.deleted_at is null
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.code,
+        m1_0.created_at,
+        m1_0.created_by,
+        m1_0.deleted_at,
+        m1_0.deleted_by,
+        m1_0.department_id,
+        m1_0.description,
+        m1_0.effective_date,
+        m1_0.expiry_date,
+        m1_0.is_active,
+        m1_0.name,
+        m1_0.updated_at,
+        m1_0.updated_by 
+    from
+        majors m1_0 
+    where
+        m1_0.deleted_at is null
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.code,
+        m1_0.created_at,
+        m1_0.created_by,
+        m1_0.deleted_at,
+        m1_0.deleted_by,
+        m1_0.department_id,
+        m1_0.description,
+        m1_0.effective_date,
+        m1_0.expiry_date,
+        m1_0.is_active,
+        m1_0.name,
+        m1_0.updated_at,
+        m1_0.updated_by 
+    from
+        majors m1_0 
+    where
+        m1_0.deleted_at is null
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.code,
+        d1_0.created_at,
+        d1_0.created_by,
+        d1_0.deleted_at,
+        d1_0.deleted_by,
+        d1_0.description,
+        d1_0.established_year,
+        d1_0.is_active,
+        d1_0.name,
+        d1_0.updated_at,
+        d1_0.updated_by 
+    from
+        departments d1_0 
+    where
+        d1_0.deleted_at is null
+Hibernate: 
+    select
+        ay1_0.id,
+        ay1_0.code,
+        ay1_0.created_at,
+        ay1_0.created_by,
+        ay1_0.deleted_at,
+        ay1_0.deleted_by,
+        ay1_0.description,
+        ay1_0.end_date,
+        ay1_0.is_active,
+        ay1_0.name,
+        ay1_0.start_date,
+        ay1_0.updated_at,
+        ay1_0.updated_by,
+        ay1_0.[year] 
+    from
+        academic_years ay1_0 
+    where
+        ay1_0.deleted_at is null
+Hibernate: 
+    select
+        sc1_0.id,
+        sc1_0.academic_year_id,
+        sc1_0.advisor_id,
+        sc1_0.code,
+        sc1_0.created_at,
+        sc1_0.created_by,
+        sc1_0.deleted_at,
+        sc1_0.deleted_by,
+        sc1_0.department_id,
+        sc1_0.is_active,
+        sc1_0.major_id,
+        sc1_0.name,
+        sc1_0.training_program_id,
+        sc1_0.updated_at,
+        sc1_0.updated_by 
+    from
+        student_classes sc1_0 
+    where
+        sc1_0.deleted_at is null
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.code,
+        d1_0.created_at,
+        d1_0.created_by,
+        d1_0.deleted_at,
+        d1_0.deleted_by,
+        d1_0.description,
+        d1_0.established_year,
+        d1_0.is_active,
+        d1_0.name,
+        d1_0.updated_at,
+        d1_0.updated_by 
+    from
+        departments d1_0 
+    where
+        d1_0.deleted_at is null
+Hibernate: 
+    select
+        ay1_0.id,
+        ay1_0.code,
+        ay1_0.created_at,
+        ay1_0.created_by,
+        ay1_0.deleted_at,
+        ay1_0.deleted_by,
+        ay1_0.description,
+        ay1_0.end_date,
+        ay1_0.is_active,
+        ay1_0.name,
+        ay1_0.start_date,
+        ay1_0.updated_at,
+        ay1_0.updated_by,
+        ay1_0.[year] 
+    from
+        academic_years ay1_0 
+    where
+        ay1_0.deleted_at is null
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.date_of_birth,
+        l1_0.deleted_at,
+        l1_0.deleted_by,
+        l1_0.department_id,
+        l1_0.email,
+        l1_0.full_name,
+        l1_0.gender,
+        l1_0.hire_date,
+        l1_0.is_active,
+        l1_0.lecturer_code,
+        l1_0.phone,
+        l1_0.position_id,
+        l1_0.updated_at,
+        l1_0.updated_by,
+        l1_0.user_id 
+    from
+        lecturers l1_0 
+    where
+        l1_0.deleted_at is null
+Hibernate: 
+    select
+        tp1_0.id,
+        tp1_0.admission_year,
+        tp1_0.code,
+        tp1_0.created_at,
+        tp1_0.created_by,
+        tp1_0.deleted_at,
+        tp1_0.deleted_by,
+        tp1_0.department_id,
+        tp1_0.description,
+        tp1_0.duration_years,
+        tp1_0.effective_date,
+        tp1_0.expiry_date,
+        tp1_0.is_active,
+        tp1_0.major_id,
+        tp1_0.name,
+        tp1_0.status,
+        tp1_0.total_credits,
+        tp1_0.updated_at,
+        tp1_0.updated_by 
+    from
+        training_programs tp1_0 
+    where
+        tp1_0.deleted_at is null
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.code,
+        m1_0.created_at,
+        m1_0.created_by,
+        m1_0.deleted_at,
+        m1_0.deleted_by,
+        m1_0.department_id,
+        m1_0.description,
+        m1_0.effective_date,
+        m1_0.expiry_date,
+        m1_0.is_active,
+        m1_0.name,
+        m1_0.updated_at,
+        m1_0.updated_by 
+    from
+        majors m1_0 
+    where
+        m1_0.deleted_at is null
+Hibernate: 
+    select
+        tp1_0.id,
+        tp1_0.admission_year,
+        tp1_0.code,
+        tp1_0.created_at,
+        tp1_0.created_by,
+        tp1_0.deleted_at,
+        tp1_0.deleted_by,
+        tp1_0.department_id,
+        tp1_0.description,
+        tp1_0.duration_years,
+        tp1_0.effective_date,
+        tp1_0.expiry_date,
+        tp1_0.is_active,
+        tp1_0.major_id,
+        tp1_0.name,
+        tp1_0.status,
+        tp1_0.total_credits,
+        tp1_0.updated_at,
+        tp1_0.updated_by 
+    from
+        training_programs tp1_0 
+    where
+        tp1_0.deleted_at is null
+Hibernate: 
+    select
+        ay1_0.id,
+        ay1_0.code,
+        ay1_0.created_at,
+        ay1_0.created_by,
+        ay1_0.deleted_at,
+        ay1_0.deleted_by,
+        ay1_0.description,
+        ay1_0.end_date,
+        ay1_0.is_active,
+        ay1_0.name,
+        ay1_0.start_date,
+        ay1_0.updated_at,
+        ay1_0.updated_by,
+        ay1_0.[year] 
+    from
+        academic_years ay1_0 
+    where
+        ay1_0.deleted_at is null
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.academic_year_year,
+        s1_0.address,
+        s1_0.admission_year,
+        s1_0.card_place,
+        s1_0.code,
+        s1_0.created_at,
+        s1_0.created_by,
+        s1_0.current_address,
+        s1_0.date_of_birth,
+        s1_0.date_of_issue,
+        s1_0.deleted_at,
+        s1_0.deleted_by,
+        s1_0.department_id,
+        s1_0.email,
+        s1_0.full_name,
+        s1_0.gender,
+        s1_0.is_active,
+        s1_0.major_id,
+        s1_0.personal_identification_number,
+        s1_0.phone,
+        s1_0.status_id,
+        s1_0.student_classess_id,
+        s1_0.training_program_id,
+        s1_0.updated_at,
+        s1_0.updated_by,
+        s1_0.user_id 
+    from
+        students s1_0
